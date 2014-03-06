@@ -1,0 +1,86 @@
+Function 0 0 2
+
+:while
+iPush_0
+CallNative wait 1 0
+CallNative player_id 0 1
+Call @Label_get_coords
+CallNative player_ped_id 0 1
+CallNative get_entity_heading 1 1
+Call @Label_draw_coords
+Jump @while
+Return 0 0
+
+:Label_draw_coords
+Function 5 4 3
+getF 0
+fPush 0.05000000
+fPush 0.10000000
+Call @Label_draw_string
+getF 1
+fPush 0.05000000
+fPush 0.13000000
+Call @Label_draw_string
+getF 2
+fPush 0.05000000
+fPush 0.16000000
+Call @Label_draw_string
+getF 3
+fPush 0.05000000
+fPush 0.19000000
+Call @Label_draw_string
+Return 4 0
+
+
+:Label_draw_string
+Function 4 3 3
+Call @Label_set_up_draw
+PushString "NUMBER"
+CallNative unk_0x3E35563E 1 0
+getF 0
+iPush_4
+CallNative is_ped_hiding_near_indicatorlights 2 0
+getF 1
+getF 2
+CallNative unk_0x6F8350CE 2 0
+Return 3 0
+
+:Label_get_coords
+Function 3 1 3
+getF 0
+CallNative get_player_ped 1 1
+iPush_0
+CallNative get_entity_coords 2 3
+Return 1 3
+
+
+:Label_set_up_draw
+Function 1 0 2
+iPush_0
+CallNative set_text_font 1 0
+fPush 0.35
+fPush 0.35
+CallNative set_text_scale 2 0
+Push1 255
+Push1 255
+Push1 255
+Push1 255
+CallNative set_text_colour 4 0
+fPush_0.0
+fPush_1.0
+CallNative set_text_wrap 2 0
+iPush_0
+CallNative set_text_centre 1 0
+iPush_0
+iPush_0
+iPush_0
+iPush_0
+iPush_0
+CallNative set_text_dropshadow 5 0
+iPush_0
+iPush_0
+iPush_0
+iPush_0
+iPush_0
+CallNative set_text_edge 5 0
+Return 0 0

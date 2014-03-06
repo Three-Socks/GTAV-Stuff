@@ -1,0 +1,46 @@
+Function 0 0 2
+
+:while
+iPush_0
+CallNative wait 1 0
+Call @Label_catch_button_press
+Jump @while
+Return 0 0
+
+:Label_catch_button_press
+Function 1 0 2
+iPush_2
+Push1 174
+CallNative is_control_just_released 2 1
+JumpFalse @Label_catch_button_press_1
+PushString "STRING"
+PushString "~INPUT_FRONTEND_ACCEPT~ was pressed."
+PushS 7500
+iPush_1
+Call @draw_gxt_text
+Jump @Label_catch_button_press_2
+
+:Label_catch_button_press_1
+iPush_2
+Push1 175
+CallNative is_control_just_released 2 1
+JumpFalse @Label_catch_button_press_2
+PushString "STRING"
+PushString "~INPUT_FRONTEND_CANCEL~ was pressed."
+PushS 7500
+iPush_1
+Call @draw_gxt_text
+
+:Label_catch_button_press_2
+Return 0 0
+
+:draw_gxt_text
+Function 2 4 3
+getF 0
+CallNative unk_0xF42C43C7 1 0
+getF 1
+CallNative unk_0x27A244D8 1 0
+getF 2
+getF 3
+CallNative unk_0x38F82261 2 0
+Return 4 0

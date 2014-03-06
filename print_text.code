@@ -1,0 +1,54 @@
+Function 0 0 2
+
+:Label_print_text_2
+iPush_0
+CallNative wait 1 0
+PushString "Example Text"
+fPush 0.05000000
+fPush 0.19000000
+Call @draw_text
+Jump @Label_print_text_2
+Return 0 0
+
+:draw_text
+Function 6 3 3
+Call @set_up_text
+PushString "STRING"
+CallNative unk_0x3E35563E 1 0
+getF 0
+CallNative unk_0x27A244D8 1 0
+getF 1
+getF 2
+CallNative unk_0x6F8350CE 2 0
+Return 3 0
+
+:set_up_text
+Function 1 0 2
+iPush_0
+CallNative set_text_font 1 0
+fPush 0.35
+fPush 0.35
+CallNative set_text_scale 2 0
+Push1 255
+Push1 255
+Push1 255
+Push1 255
+CallNative set_text_colour 4 0
+fPush_0.0
+fPush_1.0
+CallNative set_text_wrap 2 0
+iPush_0
+CallNative set_text_centre 1 0
+iPush_0
+iPush_0
+iPush_0
+iPush_0
+iPush_0
+CallNative set_text_dropshadow 5 0
+iPush_0
+iPush_0
+iPush_0
+iPush_0
+iPush_0
+CallNative set_text_edge 5 0
+Return 0 0

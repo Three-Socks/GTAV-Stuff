@@ -1,0 +1,23 @@
+Function 0 0 2
+
+:while
+iPush_0
+CallNative wait 1 0
+PushString "STRING"
+PushString "Example Text"
+PushS 7500
+iPush_1
+Call @draw_gxt_text
+Jump @while
+Return 0 0
+
+:draw_gxt_text
+Function 1 4 3
+getF 0
+CallNative unk_0xF42C43C7 1 0
+getF 1
+CallNative unk_0x27A244D8 1 0
+getF 2
+getF 3
+CallNative unk_0x38F82261 2 0
+Return 4 0
