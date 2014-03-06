@@ -5,7 +5,7 @@ iPush_0
 CallNative wait 1 0
 PushString "STRING"
 PushString "Example Text"
-PushS 7500
+PushS 2500
 iPush_1
 Call @draw_gxt_text
 Jump @while

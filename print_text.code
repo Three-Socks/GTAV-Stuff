@@ -5,7 +5,7 @@ iPush_0
 CallNative wait 1 0
 PushString "Example Text"
 fPush 0.05000000
-fPush 0.19000000
+fPush 0.22000000
 Call @draw_text
 Jump @Label_print_text_2
 Return 0 0
