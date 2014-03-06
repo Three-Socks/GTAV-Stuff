@@ -14,8 +14,8 @@ Push1 174
 CallNative is_control_just_released 2 1
 JumpFalse @Label_catch_button_press_1
 PushString "STRING"
-PushString "~INPUT_FRONTEND_ACCEPT~ was pressed."
-PushS 7500
+PushString "X was pressed."
+PushS 2500
 iPush_1
 Call @draw_gxt_text
 Jump @Label_catch_button_press_2
@@ -26,8 +26,8 @@ Push1 175
 CallNative is_control_just_released 2 1
 JumpFalse @Label_catch_button_press_2
 PushString "STRING"
-PushString "~INPUT_FRONTEND_CANCEL~ was pressed."
-PushS 7500
+PushString "O was pressed."
+PushS 2500
 iPush_1
 Call @draw_gxt_text
 
