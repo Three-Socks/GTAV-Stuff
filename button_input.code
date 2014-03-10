@@ -3,12 +3,6 @@ Function 0 0 2
 :while
 iPush_0
 CallNative wait 1 0
-Call @Label_catch_button_press
-Jump @while
-Return 0 0
-
-:Label_catch_button_press
-Function 1 0 2
 iPush_2
 Push1 174
 CallNative is_control_just_released 2 1
@@ -32,6 +26,8 @@ iPush_1
 Call @draw_gxt_text
 
 :Label_catch_button_press_2
+Jump @while
+
 Return 0 0
 
 :draw_gxt_text
