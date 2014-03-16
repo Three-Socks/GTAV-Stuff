@@ -1,13 +1,18 @@
 Function 0 0 2
 
 :Label_print_text_2
+iPush_1
+JumpFalse @Label_main
 iPush_0
 CallNative wait 1 0
 PushString "Example Text"
 fPush 0.05000000
 fPush 0.22000000
 Call @draw_text
+
+:Label_main
 Jump @Label_print_text_2
+
 Return 0 0
 
 :draw_text

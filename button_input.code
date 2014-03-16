@@ -1,6 +1,8 @@
 Function 0 0 2
 
 :while
+iPush_1
+JumpFalse @Label_catch_button_press_2
 iPush_0
 CallNative wait 1 0
 iPush_2
@@ -28,6 +30,7 @@ Call @draw_gxt_text
 :Label_catch_button_press_2
 Jump @while
 
+:Label_main_2
 Return 0 0
 
 :draw_gxt_text
