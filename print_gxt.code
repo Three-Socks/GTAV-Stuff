@@ -1,6 +1,8 @@
 Function 0 0 2
 
 :while
+iPush_1
+JumpFalse @Label_main
 iPush_0
 CallNative wait 1 0
 PushString "STRING"
@@ -8,7 +10,10 @@ PushString "Example Text"
 PushS 2500
 iPush_1
 Call @draw_gxt_text
+
+:Label_main
 Jump @while
+
 Return 0 0
 
 :draw_gxt_text
