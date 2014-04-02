@@ -1,0 +1,75 @@
+Function 0 0 2
+PushS 5000
+CallNative wait 1 0
+CallNative player_ped_id 0 1
+iPush_0
+CallNative is_ped_in_any_vehicle 2 1
+JumpFalse @exit
+CallNative player_ped_id 0 1
+iPush_0
+CallNative get_vehicle_ped_is_in 2 1
+Call @ChangeCarPlate
+
+:exit
+return 0 0
+
+:ShowKeyBoard
+Function 1 1 3
+iPush_0
+PushString ""
+PushString ""
+PushString ""
+PushString ""
+PushString ""
+PushString ""
+GetF 0
+CallNative display_onscreen_keyboard 8 0
+CallNative update_onscreen_keyboard 0 1
+SetF 3
+:LoopStart
+GetF 3
+iPush_0
+JumpEQ @LoopEnd
+iPush_0
+CallNative wait 1 0
+CallNative update_onscreen_keyboard 0 1
+SetF 3
+Jump @LoopStart
+
+:LoopEnd
+GetF 3
+iPush_1
+CmpEq
+return 1 1
+
+:DoesVehicleExist
+Function 1 1 2
+GetF 0
+CallNative does_entity_exist 1 1
+JumpFalse @DoesVehicleExist_End
+GetF 0
+CallNative is_entity_a_vehicle 1 1
+return 1 1
+
+:DoesVehicleExist_End
+iPush_0
+return 1 1
+
+:ChangeCarPlate
+Function 1 1 2
+GetF 0
+Call @DoesVehicleExist
+JumpFalse @ChangeCarPlate_End
+Push1 9
+Call @ShowKeyBoard
+JumpFalse @ChangeCarPlate_End
+CallNative get_onscreen_keyboard_result 0 1
+CallNative get_length_of_literal_string 1 1
+Push1 8
+JumpNE @ChangeCarPlate_End
+GetF 0
+CallNative get_onscreen_keyboard_result 0 1
+CallNative set_vehicle_number_plate_text 2 0
+
+:ChangeCarPlate_End
+return 1 0
