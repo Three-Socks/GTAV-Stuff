@@ -1,35 +1,37 @@
 Function 0 0 2
 iPush_1
-StackSet 2
+StaticSet1 2
 Push1 134
-StackSet 3
+StaticSet1 3
 Push1 134
-StackSet 4
+StaticSet1 4
 iPush_1
-StackSet 5
+StaticSet1 5
 iPush_1
-StackSet 6
+StaticSet1 6
 iPush_1
-StackSet 7
+StaticSet1 7
 Push1 134
-StackSet 8
+StaticSet1 8
 iPush_1
-StackSet 9
+StaticSet1 9
 Push1 12
-StackSet 10
+StaticSet1 10
 Push1 12
-StackSet 11
-Push1 34
-Push 1399537909
-CallNative unk_0x029D3841 1 1
-iPush_0
-JumpNE @Label_modmanager_3
+StaticSet1 11
 
+CallNative network_is_game_in_progress 0 1
+JumpFalse @Label_not_network
+CallNative network_set_script_is_safe_for_network_game 0 0
+
+:Label_not_network
 PushString "modmanager"
 CallNative does_script_exist 1 1
 JumpFalse @Label_modmanager_3
 
 :Label_modmanager_0
+PushString "modmanager"
+CallNative terminate_all_scripts_with_this_name 1 0
 PushString "modmanager"
 CallNative request_script 1 0
 
@@ -44,16 +46,17 @@ Jump @Label_modmanager_1
 
 :Label_modmanager_2
 PushString "modmanager"
-PushS 512
+PushS 1024
 CallNative start_new_script 2 1
 drop
 PushString "modmanager"
 CallNative set_script_as_no_longer_needed 1 0
 
 :Label_modmanager_3
+Push1 34
 CallNative unk_0x4B37333C 1 1
-JumpFalse @Label_modmanager_4
+JumpFalse @Label_0
 CallNative terminate_this_thread 0 0
 
-:Label_modmanager_4
+:Label_0
 Return 0 0
