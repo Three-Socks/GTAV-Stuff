@@ -46,7 +46,7 @@ Jump @Label_modmanager_1
 
 :Label_modmanager_2
 PushString "modmanager"
-PushS 512
+PushS 1024
 CallNative start_new_script 2 1
 drop
 PushString "modmanager"
