@@ -2,6 +2,7 @@
 //formatted - XX XX XX XX
 :inttohexstring
 Function 1 1 3
+
 pushstring ""
 pstatic2 262//you can use any variable to hold this
 strcopy 64
@@ -40,7 +41,7 @@ jump @Loop
 
 :loopend
 pstatic2 262
-return 1 1
+Return 1 1
 
 :inttohexchar
 Function 1 1 2
@@ -50,68 +51,68 @@ Jump @charerror
 
 :char0
 pushstring "0"
-return 1 1
+Return 1 1
 
 :char1
 pushstring "1"
-return 1 1
+Return 1 1
 
 :char2
 pushstring "2"
-return 1 1
+Return 1 1
 
 :char3
 pushstring "3"
-return 1 1
+Return 1 1
 
 :char4
 pushstring "4"
-return 1 1
+Return 1 1
 
 :char5
 pushstring "5"
-return 1 1
+Return 1 1
 
 :char6
 pushstring "6"
-return 1 1
+Return 1 1
 
 :char7
 pushstring "7"
-return 1 1
+Return 1 1
 
 :char8
 pushstring "8"
-return 1 1
+Return 1 1
 
 :char9
 pushstring "9"
-return 1 1
+Return 1 1
 
 :chara
 pushstring "A"
-return 1 1
+Return 1 1
 
 :charb
 pushstring "B"
-return 1 1
+Return 1 1
 
 :charc
 pushstring "C"
-return 1 1
+Return 1 1
 
 :chard
 pushstring "D"
-return 1 1
+Return 1 1
 
 :chare
 pushstring "E"
-return 1 1
+Return 1 1
 
 :charf
 pushstring "F"
-return 1 1
+Return 1 1
 
 :charerror
 pushstring ""
-return 1 1
+Return 1 1
