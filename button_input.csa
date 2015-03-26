@@ -6,7 +6,7 @@ JumpFalse @Label_catch_button_press_2
 iPush_0
 CallNative wait 1 0
 iPush_2
-Push1 174
+Push1 177
 CallNative is_control_just_released 2 1
 JumpFalse @Label_catch_button_press_1
 PushString "STRING"
@@ -18,7 +18,7 @@ Jump @Label_catch_button_press_2
 
 :Label_catch_button_press_1
 iPush_2
-Push1 175
+Push1 178
 CallNative is_control_just_released 2 1
 JumpFalse @Label_catch_button_press_2
 PushString "STRING"
